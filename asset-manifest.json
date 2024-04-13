@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/traderbook/static/css/main.dbe50a21.css",
-    "main.js": "/traderbook/static/js/main.42181742.js",
+    "main.js": "/traderbook/static/js/main.aa79c9a0.js",
     "static/js/304.d9e9c99e.chunk.js": "/traderbook/static/js/304.d9e9c99e.chunk.js",
     "static/js/525.e7e237e5.chunk.js": "/traderbook/static/js/525.e7e237e5.chunk.js",
     "static/js/755.7a432924.chunk.js": "/traderbook/static/js/755.7a432924.chunk.js",
@@ -10,7 +10,7 @@
     "static/media/traderbook-bg.jpg": "/traderbook/static/media/traderbook-bg.890b76c2f896b58132b1.jpg",
     "index.html": "/traderbook/index.html",
     "main.dbe50a21.css.map": "/traderbook/static/css/main.dbe50a21.css.map",
-    "main.42181742.js.map": "/traderbook/static/js/main.42181742.js.map",
+    "main.aa79c9a0.js.map": "/traderbook/static/js/main.aa79c9a0.js.map",
     "304.d9e9c99e.chunk.js.map": "/traderbook/static/js/304.d9e9c99e.chunk.js.map",
     "525.e7e237e5.chunk.js.map": "/traderbook/static/js/525.e7e237e5.chunk.js.map",
     "755.7a432924.chunk.js.map": "/traderbook/static/js/755.7a432924.chunk.js.map",
@@ -19,6 +19,6 @@
   },
   "entrypoints": [
     "static/css/main.dbe50a21.css",
-    "static/js/main.42181742.js"
+    "static/js/main.aa79c9a0.js"
   ]
 }

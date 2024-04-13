@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/traderbook/static/css/main.f4509734.css",
+    "main.js": "/traderbook/static/js/main.741bdfec.js",
+    "index.html": "/traderbook/index.html",
+    "main.f4509734.css.map": "/traderbook/static/css/main.f4509734.css.map",
+    "main.741bdfec.js.map": "/traderbook/static/js/main.741bdfec.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f4509734.css",
+    "static/js/main.741bdfec.js"
+  ]
+}

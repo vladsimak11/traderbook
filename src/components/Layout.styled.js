@@ -9,6 +9,8 @@ export const Section = styled.section`
   margin-right: auto;
   display: flex;
   justify-content: center;
+  padding-left: 15px;
+  padding-right: 15px;
   
   @media screen and (min-width: ${mobile}) {
     max-width: ${mobile};

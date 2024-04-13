@@ -1,0 +1,57 @@
+import styled from 'styled-components';
+import { colors } from '../variables';
+
+const { darkBlue, lightGreen, lightRed } = colors;
+
+export const Table = styled.table`
+  margin-top: 40px;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 25px 0;
+  font-family: sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+`;
+
+export const TheadTr = styled.tr`
+  background-color: ${lightGreen};
+  color: #ffffff;
+  text-align: center;
+`;
+
+export const Th = styled.th`
+  padding: 12px 15px;
+  text-align: center;
+}
+`;
+
+export const Td = styled.td`
+  padding: 12px 15px;
+  text-align: center;
+`;
+
+export const TbodyTr = styled.tr`
+  border-bottom: 1px solid #dddddd;
+
+  &:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+
+  &:last-of-type {
+    border-bottom: 2px solid ${darkBlue};
+  }
+`;
+
+export const DeleteButton = styled.button`
+  background-color: ${lightRed};
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  padding: 7px;
+  border: none;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    background-color: #da0505;
+  }
+
+`;

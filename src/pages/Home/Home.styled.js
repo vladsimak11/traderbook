@@ -1,8 +1,4 @@
 import styled, { keyframes } from 'styled-components';
-import { colors, sizes } from '../../components/variables';
-
-const { darkBlue, lightGray, lightGreen } = colors;
-const { tablet } = sizes;
 
 const typing = keyframes`   
 from { width: 0 }
@@ -11,42 +7,40 @@ to { width: 100% }
 
 const blinkCaret = keyframes`   
 from, to { border-color: transparent }
-50% { border-color: ${lightGreen}; }
+50% { border-color: var(--light-green); }
 `;
 
 export const HeaderBlock= styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${lightGray};
-  color: ${darkBlue};
-  border: 2px solid ${darkBlue};
+  background-color: var(--light-gray);
+  color: var(--dark-blue);
+  border: 2px solid var(--dark-blue);
   border-radius: 10px;
-  width: 400px;
-  padding: 15px 0 15px 0;
-  margin-top: 250px;
+  width: 700px;
+  padding: 30px 20px 30px 20px;
+  margin-top: 150px;
 
-
-  @media screen and (min-width: ${tablet}) {
-    width: 700px;
-    height: 80px;
-    padding: 30px 20px 30px 20px;
-    margin-top: 250px;
+  @media screen and (max-width: 480px) {
+    width: 330px;
+    padding: 20px 20px 20px 20px;
   }
+
 `;
 
 export const Header1= styled.h1`
-  font-size: 1.7rem;
+  font-size: 3rem;
   overflow: hidden; 
-  border-right: .15em solid ${lightGreen};
+  border-right: .15em solid var(--light-green);
   white-space: nowrap;
   margin: 0 auto;
   animation: 
   ${typing} 3.5s steps(40, end),
   ${blinkCaret} .75s step-end infinite;
 
-  @media screen and (min-width: ${tablet}) {
-    font-size: 3rem;
+  @media screen and (max-width: 480px) {
+    font-size: 1.45rem;
   }
 
 `;

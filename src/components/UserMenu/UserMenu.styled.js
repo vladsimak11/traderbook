@@ -1,7 +1,4 @@
 import styled from 'styled-components';
-import { colors } from '../variables';
-
-const { lightGreen } = colors;
 
 export const UserNameBlock = styled.div`
   display: flex;
@@ -10,10 +7,18 @@ export const UserNameBlock = styled.div`
   color: white;
 `;
 
+export const UserNameText = styled.p`
+
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+
+`;
+
 export const Button = styled.button`
   width: 120px;
   border: none;
-  background-color: ${lightGreen};
+  background-color: var(--light-green);
   font-size: 16px;
   font-weight: 500;
   padding: 8px;

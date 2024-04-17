@@ -1,7 +1,4 @@
 import styled from 'styled-components';
-import { colors } from '../variables';
-
-const { darkBlue, lightGreen, lightRed } = colors;
 
 export const Table = styled.table`
   margin-top: 40px;
@@ -13,7 +10,7 @@ export const Table = styled.table`
 `;
 
 export const TheadTr = styled.tr`
-  background-color: ${lightGreen};
+  background-color: var(--light-green);
   color: #ffffff;
   text-align: center;
 `;
@@ -21,7 +18,6 @@ export const TheadTr = styled.tr`
 export const Th = styled.th`
   padding: 12px 15px;
   text-align: center;
-}
 `;
 
 export const Td = styled.td`
@@ -37,12 +33,12 @@ export const TbodyTr = styled.tr`
   }
 
   &:last-of-type {
-    border-bottom: 2px solid ${darkBlue};
+    border-bottom: 2px solid var(--dark-blue);
   }
 `;
 
 export const DeleteButton = styled.button`
-  background-color: ${lightRed};
+  background-color: var(--light-red);
   color: white;
   border-radius: 5px;
   text-align: center;

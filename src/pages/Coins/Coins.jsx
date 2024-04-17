@@ -22,15 +22,7 @@ export default function Coins() {
   }, [dispatch]);
 
   return (
-    <div       
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        color: '#010101',
-        paddingTop: '80px',
-      }}>
+    <>
       <Helmet>
         <title>Your Traderbook</title>
       </Helmet>
@@ -42,6 +34,6 @@ export default function Coins() {
           <Filter />
           <DataList />
         </MainBlock>
-    </div>
+    </>
   );
 }

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://traderbook-back.onrender.com';
+axios.defaults.baseURL = 'http://localhost:3002';
 
 export const fetchCoins = createAsyncThunk(
   'coins/fetchCoins',

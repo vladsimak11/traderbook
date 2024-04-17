@@ -15,9 +15,10 @@ export const MainBlock= styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
-  width: 100%;
+  width: 1000px;
   margin-left: auto;
   margin-right: auto;
-  border-bottom: 8px solid #2EE59D;
+  border-bottom: 8px solid var(--light-green);
   border-radius: 10px;
+  margin-top: 80px;
 `;

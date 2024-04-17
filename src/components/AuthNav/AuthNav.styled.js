@@ -1,13 +1,16 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { colors } from '../variables';
 
-const { lightGreen } = colors;
 
 export const AuthNavList = styled.div`
   display: flex;
   gap: 30px;
   font-size: 25px;
+
+  @media screen and (max-width: 480px) {
+    font-size: 18px;
+    gap: 20px;
+  }
 `;
 
 export const LinkRegister = styled(NavLink)`
@@ -25,7 +28,7 @@ export const LinkRegister = styled(NavLink)`
   color: white;
 
   &:hover {
-    color: ${lightGreen};
+    color: var(--light-green);
     background-color: white;
   }
 
@@ -43,11 +46,10 @@ export const LinkLogin = styled(NavLink)`
   outline: none;
   margin: 0 auto;
   background-color: white;
-  color: ${lightGreen};
+  color: var(--light-green);
 
   &:hover {
-    color: ${lightGreen};
-    background-color: ${lightGreen};
+    background-color: var(--light-green);
     color: white;
   }
 

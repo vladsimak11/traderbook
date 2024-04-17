@@ -1,8 +1,5 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { colors } from '../variables';
-
-const { lightGreen } = colors;
 
 export const Nav = styled.nav`
   display: flex;
@@ -16,12 +13,12 @@ color: white;
 text-decoration: none;
 
 &:hover {
-  color: ${lightGreen};;
+  color: var(--light-green);
   text-decoration: underline;
 }
 
-&:active {
-  color: ${lightGreen};;
+&.active {
+  color: var(--light-green);
 }
 `;
 

@@ -1,7 +1,4 @@
 import styled from 'styled-components';
-import { colors } from '../variables';
-
-const { darkBlue, lightGreen, darkGray } = colors;
 
 export const Form = styled.form`
   margin-bottom: 40px;
@@ -20,17 +17,17 @@ export const Block = styled.div`
 `;
 
 export const Label = styled.label`
-  color: ${darkBlue};
+  color: #f4a442;
   font-size: 18px;
   font-weight: 600;
 `;
 
 export const Input = styled.input`
-  background-color: ${darkGray};
-  border: 2px solid ${darkBlue};
+  background-color: var(--dark-gray);
+  border: 2px solid var(--dark-blue);
   padding: 5px 10px 5px 10px;
   border-radius: 5px;
-  color: ${darkBlue};
+  color: var(--dark-blue);
 `;
 
 export const Button = styled.button`
@@ -38,8 +35,8 @@ export const Button = styled.button`
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
-  background-color: ${darkBlue};
-  color: ${lightGreen};
+  background-color: var(--dark-blue);
+  color: var(--light-green);
   font-size: 22px;
   padding: 5px 20px 5px 20px;
   border: 2px solid transparent;
@@ -48,7 +45,7 @@ export const Button = styled.button`
 
   &:hover {
     background-color: transparent;
-    color: ${darkBlue};
-    border: 2px solid ${darkBlue};
+    color: var(--dark-blue);
+    border: 2px solid var(--dark-blue);
   }
 `;

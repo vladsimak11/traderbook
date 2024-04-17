@@ -6,12 +6,13 @@ export const FormReg = styled.form`
   flex-direction: column;
   justify-content: center;
   gap: 40px;
-  min-width: 480px;
+  width: 480px;
 
-  background-color: #15172b;
+  background-color: var(--dark-blue);
   border-radius: 20px;
   height: auto;
   padding: 20px;
+  margin-top: 150px;
 `;
 
 export const TitleReg  = styled.p`
@@ -40,7 +41,7 @@ export const InputReg  = styled.input`
 export const ButtonReg  = styled.button`
   width: 150px;
   border: none;
-  background-color: #2EE59D;
+  background-color: var(--light-green);
   font-size: 16px;
   font-weight: 500;
   padding: 10px;

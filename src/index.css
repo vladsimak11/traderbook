@@ -31,3 +31,11 @@ li {
   margin: 0;
   padding: 0;
 }
+
+:root {
+  --dark-blue: #15172b;
+  --light-green: #2ee59d;
+  --light-gray: #dcdcdc;
+  --dark-gray: #d1d1d1;
+  --light-red: #fa0404;
+}

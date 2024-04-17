@@ -1,19 +1,17 @@
 import styled from 'styled-components';
-// import { colors } from '../variables';
-
-// const { darkBlue, lightGreen } = colors;
 
 export const FormLogin = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 40px;
-  min-width: 480px;
+  width: 480px;
 
-  background-color: #15172b;
+  background-color: var(--dark-blue);
   border-radius: 20px;
   height: auto;
   padding: 20px;
+  margin-top: 150px;
 `;
 
 export const TitleLogin  = styled.p`
@@ -42,7 +40,7 @@ export const InputLogin  = styled.input`
 export const ButtonLogin  = styled.button`
   width: 150px;
   border: none;
-  background-color: #2EE59D;
+  background-color: var(--light-green);
   font-size: 16px;
   font-weight: 500;
   padding: 10px;

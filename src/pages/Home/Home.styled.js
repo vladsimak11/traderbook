@@ -24,7 +24,7 @@ export const HeaderBlock= styled.div`
 
   @media screen and (max-width: 480px) {
     width: 320px;
-    padding: 20px 10px 20px 10px;
+    padding: 20px 5px 20px 5px;
   }
 
 `;
@@ -40,7 +40,7 @@ export const Header1= styled.h1`
   ${blinkCaret} .75s step-end infinite;
 
   @media screen and (max-width: 480px) {
-    font-size: 1.45rem;
+    font-size: 1.4rem;
   }
 
 `;

@@ -23,8 +23,8 @@ export const HeaderBlock= styled.div`
   margin-top: 150px;
 
   @media screen and (max-width: 480px) {
-    width: 330px;
-    padding: 20px 20px 20px 20px;
+    width: 320px;
+    padding: 20px 10px 20px 10px;
   }
 
 `;

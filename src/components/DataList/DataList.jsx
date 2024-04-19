@@ -26,15 +26,15 @@ export const DataList = () => {
     <Table>
       <thead>
         <TheadTr>
-          <Th>Name Coin</Th>
+          <Th>Name</Th>
 
-          <Th>Quantity Coins</Th>
+          <Th>Quantity</Th>
 
-          <Th>Commission</Th>
+          <Th mobile>Commission</Th>
 
           <Th>Entry Point</Th>
 
-          <Th>Sum, USDT</Th>
+          <Th mobile>Sum, USDT</Th>
 
           <Th>Action</Th>
         </TheadTr>
@@ -46,9 +46,9 @@ export const DataList = () => {
             <TbodyTr key={_id}>
               <Td>{name}</Td>
               <Td>{quantity}</Td>
-              <Td>{commission}</Td>
+              <Td mobile>{commission}</Td>
               <Td>{entry}</Td>
-              <Td>{sum}</Td>
+              <Td mobile>{sum}</Td>
               <Td>
                 <DeleteButton onClick={() => dispatch(deleteCoin(_id))}>X</DeleteButton>
               </Td>

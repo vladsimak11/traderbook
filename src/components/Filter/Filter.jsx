@@ -1,4 +1,4 @@
-import { Label, Input } from './Filter.styled';
+import { FilterBlock, Label, Input } from './Filter.styled';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { getFilterValue } from '../../redux/coins/selectors';
@@ -14,15 +14,17 @@ export const Filter = () => {
   };
 
   return (
-    <Label>
-      Find contacts by name
-      <Input
-        type="text"
-        placeholder="Enter name coin"
-        name="filter"
-        value={filterValue}
-        onChange={handleFilter}
-      />
-    </Label>
-  );
+    <FilterBlock>
+      <Label>
+        Find contacts by name
+        <Input
+          type="text"
+          placeholder="Enter name coin"
+          name="filter"
+          value={filterValue}
+          onChange={handleFilter}
+        />
+      </Label>
+    </FilterBlock>
+  )
 };

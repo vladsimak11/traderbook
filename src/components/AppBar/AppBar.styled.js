@@ -5,9 +5,9 @@ export const Header= styled.header`
   justify-content: space-between;
   align-items: center;
   background-color: var(--dark-blue);
+  opacity: 0.9;
   color: var(--light-green);
   height: 80px;
-  opacity: 0.9;
   padding-left: 20px;
   padding-right: 20px;
 

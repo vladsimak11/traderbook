@@ -35,7 +35,7 @@ export const DataForm = () => {
     <Form onSubmit={handleSubmit}>
       <FormBlock>
         <Block>
-          <Label>Name Coin</Label>
+          <Label>Name</Label>
           <Input
             type="text"
             placeholder="Enter name coin"
@@ -45,7 +45,7 @@ export const DataForm = () => {
         </Block>
 
         <Block>
-          <Label>Quantity Coins</Label>
+          <Label>Quantity</Label>
           <Input
             type="text"
             placeholder="Enter quantity coins"
@@ -54,7 +54,7 @@ export const DataForm = () => {
           />
         </Block>
 
-        <Block>
+        <Block mobile>
           <Label>Commission</Label>
           <Input
             type="text"
@@ -74,7 +74,7 @@ export const DataForm = () => {
           />
         </Block>
 
-        <Block>
+        <Block mobile>
           <Label>Sum</Label>
           <Input type="text" placeholder="Enter sum" name="sum" required />
         </Block>

@@ -18,11 +18,21 @@ export const TheadTr = styled.tr`
 export const Th = styled.th`
   padding: 12px 15px;
   text-align: center;
+
+  @media screen and (max-width: 480px) {
+    display: ${props => props.mobile && "none"};
+    padding: 8px 12px;
+  }
 `;
 
 export const Td = styled.td`
   padding: 12px 15px;
   text-align: center;
+
+  @media screen and (max-width: 480px) {
+    display: ${props => props.mobile && "none"};
+    padding: 8px 12px;
+  }
 `;
 
 export const TbodyTr = styled.tr`

@@ -2,18 +2,33 @@ import styled from 'styled-components';
 
 export const Form = styled.form`
   margin-bottom: 40px;
+
+  @media screen and (max-width: 480px) {
+    margin-bottom: 25px;
+
+  }
 `;
 
 export const FormBlock = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 `;
 
 export const Block = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
   align-items: center;
+  gap: 10px;
+
+  @media screen and (max-width: 480px) {
+    display: ${props => props.mobile && "none"};
+  }
 `;
 
 export const Label = styled.label`
@@ -28,6 +43,15 @@ export const Input = styled.input`
   padding: 5px 10px 5px 10px;
   border-radius: 5px;
   color: var(--dark-blue);
+
+  @media screen and (max-width: 768px) {
+    width: 100px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 190px;
+  }
+
 `;
 
 export const Button = styled.button`

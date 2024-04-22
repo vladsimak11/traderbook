@@ -49,6 +49,16 @@ export const TbodyTr = styled.tr`
   }
 `;
 
+
+export const TfootTr = styled.tr`
+  
+`;
+
+export const TfootTd = styled.td`
+    padding: 12px 15px;
+  text-align: center;
+`;
+
 export const DeleteButton = styled.button`
   background-color: var(--light-red);
   color: white;

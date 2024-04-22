@@ -1,4 +1,4 @@
-import { Table, TheadTr, TbodyTr, Th, Td, DeleteButton } from './DataList.styled';
+import { Table, TheadTr, TbodyTr, Th, Td, TfootTr, TfootTd, DeleteButton } from './DataList.styled';
 import { deleteCoin } from '../../redux/coins/operations';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCoins, getFilterValue } from '../../redux/coins/selectors';
@@ -18,9 +18,9 @@ export const DataList = () => {
 
   const visibleData = getVisibleData();
 
-  // const getTotalNumber = (data, columnName) => {
-  //   return data.reduce((accumulator, currentValue) => accumulator + Number(currentValue[columnName]), 0)
-  // }
+  const getTotalNumber = (data, columnName) => {
+    return data.reduce((accumulator, currentValue) => accumulator + Number(currentValue[columnName]), 0)
+  }
 
   return (
     <Table>
@@ -56,16 +56,16 @@ export const DataList = () => {
           );
         })}
       </tbody>
-      {/* <tfoot>
-        <TableTr>
-          <TableTd><strong>Total:</strong></TableTd>
-          <TableTd>{getTotalNumber(visibleData, 'quantity')}</TableTd>
-          <TableTd>{getTotalNumber(visibleData, 'commission')}</TableTd>
-          <TableTd></TableTd>
-          <TableTd>{getTotalNumber(visibleData, 'sum')}</TableTd>
-          <TableTd></TableTd>
-        </TableTr>
-      </tfoot> */}
+      <tfoot>
+        <TfootTr>
+          <TfootTd><strong>Total:</strong></TfootTd>
+          <TfootTd>{getTotalNumber(visibleData, 'quantity')}</TfootTd>
+          <TfootTd>{getTotalNumber(visibleData, 'commission')}</TfootTd>
+          <TfootTd></TfootTd>
+          <TfootTd>{getTotalNumber(visibleData, 'sum')}</TfootTd>
+          <TfootTd></TfootTd>
+        </TfootTr>
+      </tfoot>
     </Table>
   );
 };

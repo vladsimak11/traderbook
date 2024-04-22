@@ -10,7 +10,7 @@ export const Table = styled.table`
 `;
 
 export const TheadTr = styled.tr`
-  background-color: var(--light-green);
+  background-color: var(--dark-blue);
   color: #ffffff;
   text-align: center;
 `;
@@ -32,11 +32,13 @@ export const Td = styled.td`
   @media screen and (max-width: 480px) {
     display: ${props => props.mobile && "none"};
     padding: 8px 12px;
+    font-size: 14px;
   }
 `;
 
 export const TbodyTr = styled.tr`
   border-bottom: 1px solid #dddddd;
+  color: ${props => props.type === "SELL" ? "red" : "green"};
 
   &:nth-of-type(even) {
     background-color: #f3f3f3;

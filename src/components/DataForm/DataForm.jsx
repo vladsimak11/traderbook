@@ -1,5 +1,6 @@
 import { addCoin } from '../../redux/coins/operations';
 import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 
 import {
   Form,
@@ -7,11 +8,13 @@ import {
   Block,
   Label,
   Input,
+  ButtonBlock,
   Button,
 } from './DataForm.styled';
 
 export const DataForm = () => {
   const dispatch = useDispatch();
+  const [type, setType] = useState('BUY');
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -24,6 +27,7 @@ export const DataForm = () => {
       commission: form.elements.commission.value,
       entry: form.elements.entry.value,
       sum: form.elements.sum.value,
+      type: type // Передаємо тип операції
     };
 
     dispatch(addCoin(coinValue));
@@ -79,7 +83,10 @@ export const DataForm = () => {
           <Input type="text" placeholder="Enter sum" name="sum" required />
         </Block>
       </FormBlock>
-      <Button type="submit">Add values</Button>
+        <ButtonBlock>
+          <Button type="submit" onClick={() => setType('BUY')} buy>BUY</Button>
+          <Button type="submit" onClick={() => setType('SELL')}>SELL</Button>
+        </ButtonBlock>
     </Form>
   );
 };

@@ -54,13 +54,17 @@ export const Input = styled.input`
 
 `;
 
+export const ButtonBlock  = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+`;
+
 export const Button = styled.button`
-  display: block;
   margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: var(--dark-blue);
-  color: var(--light-green);
+  background-color: ${props => props.buy ? "var(--light-green)" : "#da0505"};
+  color: white;
   font-size: 22px;
   padding: 5px 20px 5px 20px;
   border: 2px solid transparent;
@@ -68,8 +72,6 @@ export const Button = styled.button`
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
-    background-color: transparent;
-    color: var(--dark-blue);
-    border: 2px solid var(--dark-blue);
+    opacity: 0.7;
   }
 `;

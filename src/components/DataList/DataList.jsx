@@ -32,7 +32,7 @@ export const DataList = () => {
 
           <Th mobile>Commission</Th>
 
-          <Th>Entry Point</Th>
+          <Th>Entry</Th>
 
           <Th mobile>Sum, USDT</Th>
 
@@ -41,9 +41,9 @@ export const DataList = () => {
       </thead>
 
       <tbody>
-        {visibleData.map(({ _id, name, quantity, commission, entry, sum }) => {
+        {visibleData.map(({ _id, name, quantity, commission, entry, sum, type }) => {
           return (
-            <TbodyTr key={_id}>
+            <TbodyTr key={_id} type = {type}>
               <Td>{name}</Td>
               <Td>{quantity}</Td>
               <Td mobile>{commission}</Td>

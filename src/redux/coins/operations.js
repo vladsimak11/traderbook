@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://traderbook.vercel.app/';
+axios.defaults.baseURL = 'https://traderbook-back.vercel.app/';
 
 export const fetchCoins = createAsyncThunk(
   'coins/fetchCoins',

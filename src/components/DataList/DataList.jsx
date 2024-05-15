@@ -1,4 +1,4 @@
-import { Table, TheadTr, TbodyTr, Th, Td, TfootTr, TfootTd, DeleteButton } from './DataList.styled';
+import { Table, TheadTr, TbodyTr, Th, Td, DeleteButton } from './DataList.styled';
 import { deleteCoin } from '../../redux/coins/operations';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCoins, getFilterValue } from '../../redux/coins/selectors';
@@ -18,9 +18,9 @@ export const DataList = () => {
 
   const visibleData = getVisibleData();
 
-  const getTotalNumber = (data, columnName) => {
-    return data.reduce((accumulator, currentValue) => accumulator + Number(currentValue[columnName]), 0)
-  }
+  // const getTotalNumber = (data, columnName) => {
+  //   return data.reduce((accumulator, currentValue) => accumulator + Number(currentValue[columnName]), 0)
+  // }
 
   return (
     <Table>
@@ -39,9 +39,12 @@ export const DataList = () => {
           <Th>Action</Th>
         </TheadTr>
       </thead>
-
+        
       <tbody>
-        {visibleData.map(({ _id, name, quantity, commission, entry, sum, type }) => {
+
+        {visibleData
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map(({ _id, name, quantity, commission, entry, sum, type }) => {
           return (
             <TbodyTr key={_id} type = {type}>
               <Td>{name}</Td>
@@ -56,7 +59,7 @@ export const DataList = () => {
           );
         })}
       </tbody>
-      <tfoot>
+      {/* <tfoot>
         <TfootTr>
           <TfootTd><strong>Total:</strong></TfootTd>
           <TfootTd>{getTotalNumber(visibleData, 'quantity')}</TfootTd>
@@ -65,7 +68,7 @@ export const DataList = () => {
           <TfootTd>{getTotalNumber(visibleData, 'sum')}</TfootTd>
           <TfootTd></TfootTd>
         </TfootTr>
-      </tfoot>
+      </tfoot> */}
     </Table>
   );
 };

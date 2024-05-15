@@ -7,14 +7,33 @@ import {
   FormBlock,
   Block,
   Label,
+  Select,
+  Option,
   Input,
   ButtonBlock,
   Button,
 } from './DataForm.styled';
 
+const allCoins = [
+  'BTC', 
+  'ETH', 
+  'USDT',
+  'LTC',
+  'PEPE',
+  'BONK',
+];
+
+const allExchanges = [
+  'Binance', 
+  'Kucoin', 
+  'Gate',
+];
+
 export const DataForm = () => {
   const dispatch = useDispatch();
   const [type, setType] = useState('BUY');
+  const [selectedCoin, setSelectedCoin] = useState('BTC');
+  const [selectedExchange, setSelectedExchange] = useState('Binance');
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -22,12 +41,13 @@ export const DataForm = () => {
     const form = event.target;
 
     const coinValue = {
-      name: form.elements.name.value,
+      exchange: selectedExchange,
+      name: selectedCoin,
       quantity: form.elements.quantity.value,
       commission: form.elements.commission.value,
       entry: form.elements.entry.value,
       sum: form.elements.sum.value,
-      type: type // Передаємо тип операції
+      type: type,
     };
 
     dispatch(addCoin(coinValue));
@@ -39,13 +59,35 @@ export const DataForm = () => {
     <Form onSubmit={handleSubmit}>
       <FormBlock>
         <Block>
-          <Label>Name</Label>
-          <Input
+          <Label>Exchange</Label>
+          <Select
             type="text"
-            placeholder="Enter name coin"
+            name="exchange"
+            value={selectedExchange}
+            onChange={event => setSelectedExchange(event.target.value)}
+          >
+            {allExchanges.map(exchange => (
+              <Option key={exchange} value={exchange}>
+                {exchange}
+              </Option>
+            ))}
+          </Select>
+        </Block>
+
+        <Block>
+          <Label>Name</Label>
+          <Select
+            type="text"
             name="name"
-            required
-          />
+            value={selectedCoin}
+            onChange={event => setSelectedCoin(event.target.value)}
+          >
+            {allCoins.map(coin => (
+              <Option key={coin} value={coin}>
+                {coin}
+              </Option>
+            ))}
+          </Select>
         </Block>
 
         <Block>

@@ -13,6 +13,10 @@ export const FormReg = styled.form`
   height: auto;
   padding: 20px;
   margin-top: 150px;
+
+  @media screen and (max-width: 480px) {
+    margin-top: 80px;
+  }
 `;
 
 export const TitleReg  = styled.p`

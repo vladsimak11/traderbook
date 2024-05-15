@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const Header1= styled.h1`
   text-align: center;
   margin-bottom: 25px;
+
+  @media screen and (max-width: 480px) {
+    margin-bottom: 15px;
+  }
 `;
 
 export const Header2= styled.h2`
@@ -25,9 +29,10 @@ export const MainBlock= styled.div`
   margin-top: 80px;
 
   @media screen and (max-width: 480px) {
-    padding: 10px;
+    padding: 5px;
     width: 300px;
     max-height: 550px;
+    margin-top: 30px;
   }
 
   @media screen and (max-width: 768px) {

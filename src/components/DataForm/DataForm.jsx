@@ -58,7 +58,7 @@ export const DataForm = () => {
           />
         </Block>
 
-        <Block mobile>
+        <Block>
           <Label>Commission</Label>
           <Input
             type="text"
@@ -78,7 +78,7 @@ export const DataForm = () => {
           />
         </Block>
 
-        <Block mobile>
+        <Block>
           <Label>Sum</Label>
           <Input type="text" placeholder="Enter sum" name="sum" required />
         </Block>

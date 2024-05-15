@@ -31,7 +31,7 @@ export const Td = styled.td`
 
   @media screen and (max-width: 480px) {
     display: ${props => props.mobile && "none"};
-    padding: 8px 12px;
+    padding: 6px 8px;
     font-size: 14px;
   }
 `;

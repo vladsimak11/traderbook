@@ -12,7 +12,7 @@ export const Section = styled.section`
   overflow-y: auto; 
 
   @media screen and (max-width: 480px) {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 `;

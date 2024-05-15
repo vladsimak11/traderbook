@@ -12,6 +12,10 @@ export const FormLogin = styled.form`
   height: auto;
   padding: 20px;
   margin-top: 150px;
+
+  @media screen and (max-width: 480px) {
+    margin-top: 80px;
+  }
 `;
 
 export const TitleLogin  = styled.p`

@@ -25,10 +25,6 @@ export const Block = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 10px;
-
-  @media screen and (max-width: 480px) {
-    display: ${props => props.mobile && "none"};
-  }
 `;
 
 export const Label = styled.label`

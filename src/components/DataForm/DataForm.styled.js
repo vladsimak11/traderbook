@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 
   @media screen and (max-width: 480px) {
     margin-bottom: 25px;
@@ -73,7 +73,7 @@ export const Select = styled.select`
 
 export const Option = styled.option`
   font-weight: 600;
-  color: red;
+  color: var(--dark-blue);
   border-bottom: 4px solid red;
 
   &:not(:last-child) {

@@ -36,6 +36,15 @@ export const Td = styled.td`
   }
 `;
 
+export const TdDate = styled.td`
+  color: var(--light-yellow);
+  font-weight: 600;
+  
+  @media screen and (max-width: 480px) {
+    display: ${props => props.mobile && "none"};
+  }
+`;
+
 export const TbodyTr = styled.tr`
   border-bottom: 1px solid #dddddd;
   color: ${props => props.type === "SELL" ? "red" : "green"};

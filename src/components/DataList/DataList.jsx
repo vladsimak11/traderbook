@@ -26,6 +26,8 @@ export const DataList = () => {
     <Table>
       <thead>
         <TheadTr>
+          <Th mobile>Exchange</Th>
+
           <Th>Name</Th>
 
           <Th>Quantity</Th>
@@ -37,6 +39,8 @@ export const DataList = () => {
           <Th mobile>Sum, USDT</Th>
 
           <Th>Action</Th>
+
+          <Th mobile>Date</Th>
         </TheadTr>
       </thead>
         
@@ -44,9 +48,11 @@ export const DataList = () => {
 
         {visibleData
           .sort((a, b) => a.name.localeCompare(b.name))
-          .map(({ _id, name, quantity, commission, entry, sum, type }) => {
+          .map(({ _id, exchange, name, quantity, commission, entry, sum, type, 
+          }) => {
           return (
             <TbodyTr key={_id} type = {type}>
+              <Td mobile>{exchange}</Td>
               <Td>{name}</Td>
               <Td>{quantity}</Td>
               <Td mobile>{commission}</Td>
@@ -55,6 +61,9 @@ export const DataList = () => {
               <Td>
                 <DeleteButton onClick={() => dispatch(deleteCoin(_id))}>X</DeleteButton>
               </Td>
+
+              {/* <TdDate mobile>{createdAt.substring(0, 10)} {createdAt.substring(11, 19)}</TdDate> */}
+      
             </TbodyTr>
           );
         })}

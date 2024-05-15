@@ -16,7 +16,7 @@ export const Header2= styled.h2`
 
 export const MainBlock= styled.div`
   width: 1000px;
-  max-height: 580px; 
+  max-height: 630px; 
   overflow-y: auto; 
   background-color: #EDEDED;
   display: flex;
@@ -26,13 +26,12 @@ export const MainBlock= styled.div`
   margin-right: auto;
   border-bottom: 8px solid var(--light-green);
   border-radius: 10px;
-  margin-top: 80px;
+  margin-top: 30px;
 
   @media screen and (max-width: 480px) {
     padding: 5px;
     width: 300px;
     max-height: 550px;
-    margin-top: 30px;
   }
 
   @media screen and (max-width: 768px) {

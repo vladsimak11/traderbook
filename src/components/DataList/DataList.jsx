@@ -2,9 +2,9 @@ import { Table, TheadTr, TbodyTr, Th, Td, TdDate, DeleteButton } from './DataLis
 import { deleteCoin } from '../../redux/coins/operations';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCoins, getFilterValue } from '../../redux/coins/selectors';
+// import { getExchange } from '../../redux/exchange/selectors';
 import { format } from 'date-fns';
-import { useEffect } from 'react';
-import { fetchCoins } from '../../redux/coins/operations';
+
 
 const formatDate = (date) => format(new Date(date), 'dd/MM/yyyy HH:mm:ss');
 
@@ -12,15 +12,7 @@ export const DataList = () => {
   const dispatch = useDispatch();
   const coins = useSelector(getCoins);
   const filterValue = useSelector(getFilterValue);
-
-  useEffect(() => {
-    dispatch(fetchCoins());
-  }, [dispatch]);
-
-  useEffect(() => {
-    console.log(coins); // Додаємо консоль для перевірки даних після отримання з API
-  }, [coins]);
-
+  // const exchangeValue = useSelector(getExchange);
 
   const getVisibleData = () => {
     const normalizedFilter = filterValue.toLowerCase();

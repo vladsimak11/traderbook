@@ -8,14 +8,18 @@ import {
   Block,
   Label,
   Input,
+  Select,
   ButtonBlock,
   Button,
 } from './DataForm.styled';
+
+const allCoins = ['BTC', 'ETH', 'LTC', 'DOGE', 'TRX'];
 
 
 export const DataForm = () => {
   const dispatch = useDispatch();
   const [type, setType] = useState('BUY');
+  const [selectedCoin, setSelectedCoin] = useState('BTC');
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -24,7 +28,8 @@ export const DataForm = () => {
 
     const coinValue = {
       exchange: form.elements.exchange.value,
-      name: form.elements.name.value,
+      // name: form.elements.name.value,
+      name: selectedCoin,
       quantity: form.elements.quantity.value,
       commission: form.elements.commission.value,
       entry: form.elements.entry.value,
@@ -35,6 +40,10 @@ export const DataForm = () => {
     dispatch(addCoin(coinValue));
 
     form.reset();
+  };
+
+  const handleSelectChange = (event) => {
+    setSelectedCoin(event.target.value);
   };
 
   return (
@@ -50,7 +59,7 @@ export const DataForm = () => {
           />
         </Block>
 
-        <Block>
+        {/* <Block>
           <Label>Name Coin</Label>
           <Input
             type="text"
@@ -58,6 +67,22 @@ export const DataForm = () => {
             name="name"
             required
           />
+        </Block> */}
+
+        <Block>
+          <Label>Name Coin</Label>
+          <Select 
+            name="name" 
+            value={selectedCoin} 
+            onChange={handleSelectChange} 
+            required
+          >
+            {allCoins.map(coin => (
+              <option key={coin} value={coin}>
+                {coin}
+              </option>
+            ))}
+          </Select>
         </Block>
 
         <Block>

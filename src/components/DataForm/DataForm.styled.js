@@ -50,6 +50,23 @@ export const Input = styled.input`
 
 `;
 
+export const Select = styled.select`
+  background-color: var(--dark-gray);
+  border: 2px solid var(--dark-blue);
+  padding: 5px 10px 5px 10px;
+  border-radius: 5px;
+  color: var(--dark-blue);
+
+  @media screen and (max-width: 768px) {
+    width: 100px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 190px;
+  }
+
+`;
+
 export const ButtonBlock  = styled.div`
   display: flex;
   justify-content: center;

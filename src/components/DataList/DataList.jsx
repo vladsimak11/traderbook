@@ -1,12 +1,25 @@
-import { Table, TheadTr, TbodyTr, Th, Td, DeleteButton } from './DataList.styled';
+import { Table, TheadTr, TbodyTr, Th, Td, TdDate, DeleteButton } from './DataList.styled';
 import { deleteCoin } from '../../redux/coins/operations';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCoins, getFilterValue } from '../../redux/coins/selectors';
+import { format } from 'date-fns';
+import { useEffect } from 'react';
+import { fetchCoins } from '../../redux/coins/operations';
+
+const formatDate = (date) => format(new Date(date), 'dd/MM/yyyy HH:mm:ss');
 
 export const DataList = () => {
   const dispatch = useDispatch();
   const coins = useSelector(getCoins);
   const filterValue = useSelector(getFilterValue);
+
+  useEffect(() => {
+    dispatch(fetchCoins());
+  }, [dispatch]);
+
+  useEffect(() => {
+    console.log(coins); // Додаємо консоль для перевірки даних після отримання з API
+  }, [coins]);
 
 
   const getVisibleData = () => {
@@ -49,7 +62,8 @@ export const DataList = () => {
         {visibleData
           .sort((a, b) => a.name.localeCompare(b.name))
           .map(({ _id, exchange, name, quantity, commission, entry, sum, type, 
-          }) => {
+            createdAt, }) => {
+              console.log(createdAt);
           return (
             <TbodyTr key={_id} type = {type}>
               <Td mobile>{exchange}</Td>
@@ -62,7 +76,7 @@ export const DataList = () => {
                 <DeleteButton onClick={() => dispatch(deleteCoin(_id))}>X</DeleteButton>
               </Td>
 
-              {/* <TdDate mobile>{createdAt.substring(0, 10)} {createdAt.substring(11, 19)}</TdDate> */}
+              <TdDate mobile>{formatDate(createdAt)}</TdDate>
       
             </TbodyTr>
           );

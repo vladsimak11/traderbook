@@ -15,7 +15,7 @@ export const Header2= styled.h2`
 `;
 
 export const MainBlock= styled.div`
-  width: 1000px;
+  width: 1080px;
   max-height: 630px; 
   overflow-y: auto; 
   background-color: #EDEDED;

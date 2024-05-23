@@ -18,7 +18,7 @@ export const fetchCoins = createAsyncThunk(
 
 export const addCoin = createAsyncThunk(
   'coins/addCoin',
-  async ({ exchange, name, quantity, commission, entry, sum, type, updatedAt }, thunkAPI) => {
+  async ({ exchange, name, quantity, commission, entry, sum, type, createdAt }, thunkAPI) => {
     try {
       const response = await axios.post('/data', {
         exchange,
@@ -28,7 +28,7 @@ export const addCoin = createAsyncThunk(
         entry,
         sum,
         type,
-        updatedAt,
+        createdAt,
       });
       return response.data;
     } catch (e) {

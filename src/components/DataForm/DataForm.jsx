@@ -7,33 +7,15 @@ import {
   FormBlock,
   Block,
   Label,
-  Select,
-  Option,
   Input,
   ButtonBlock,
   Button,
 } from './DataForm.styled';
 
-const allCoins = [
-  'BTC', 
-  'ETH', 
-  'USDT',
-  'LTC',
-  'PEPE',
-  'BONK',
-];
-
-const allExchanges = [
-  'Binance', 
-  'Kucoin', 
-  'Gate',
-];
 
 export const DataForm = () => {
   const dispatch = useDispatch();
   const [type, setType] = useState('BUY');
-  const [selectedCoin, setSelectedCoin] = useState('BTC');
-  const [selectedExchange, setSelectedExchange] = useState('Binance');
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -41,8 +23,8 @@ export const DataForm = () => {
     const form = event.target;
 
     const coinValue = {
-      exchange: selectedExchange,
-      name: selectedCoin,
+      exchange: form.elements.exchange.value,
+      name: form.elements.name.value,
       quantity: form.elements.quantity.value,
       commission: form.elements.commission.value,
       entry: form.elements.entry.value,
@@ -60,34 +42,22 @@ export const DataForm = () => {
       <FormBlock>
         <Block>
           <Label>Exchange</Label>
-          <Select
+          <Input
             type="text"
+            placeholder="Enter name exchange"
             name="exchange"
-            value={selectedExchange}
-            onChange={event => setSelectedExchange(event.target.value)}
-          >
-            {allExchanges.map(exchange => (
-              <Option key={exchange} value={exchange}>
-                {exchange}
-              </Option>
-            ))}
-          </Select>
+            required
+          />
         </Block>
 
         <Block>
-          <Label>Name</Label>
-          <Select
+          <Label>Name Coin</Label>
+          <Input
             type="text"
+            placeholder="Enter name coin"
             name="name"
-            value={selectedCoin}
-            onChange={event => setSelectedCoin(event.target.value)}
-          >
-            {allCoins.map(coin => (
-              <Option key={coin} value={coin}>
-                {coin}
-              </Option>
-            ))}
-          </Select>
+            required
+          />
         </Block>
 
         <Block>

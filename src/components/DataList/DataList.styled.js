@@ -39,6 +39,7 @@ export const Td = styled.td`
 export const TdDate = styled.td`
   color: var(--light-yellow);
   font-weight: 600;
+  text-align: center;
   
   @media screen and (max-width: 480px) {
     display: ${props => props.mobile && "none"};

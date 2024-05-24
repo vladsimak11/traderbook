@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.8",
     "caniuse-lite": "^1.0.30001609",
+    "crypto": "^1.0.1",
     "date-fns": "^3.6.0",
     "nanoid": "^5.0.6",
     "react": "^18.1.0",

@@ -14,12 +14,27 @@ import {
 } from './DataForm.styled';
 
 const allCoins = ['BTC', 'ETH', 'LTC', 'DOGE', 'TRX'];
+const allExchanges = [
+  'Binance', 
+  'Bybit', 
+  'OKX', 
+  'Kraken', 
+  'KuCoin',
+  'Gate',
+  'HTX',
+  'MEXC',
+  'Bitget',
+  'BingX',
+  'CoinW',
+  'WhiteBit',
+];
 
 
 export const DataForm = () => {
   const dispatch = useDispatch();
   const [type, setType] = useState('BUY');
   const [selectedCoin, setSelectedCoin] = useState('BTC');
+  const [selectedExchange, setSelectedExchange] = useState('Binance');
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -27,7 +42,8 @@ export const DataForm = () => {
     const form = event.target;
 
     const coinValue = {
-      exchange: form.elements.exchange.value,
+      // exchange: form.elements.exchange.value,
+      exchange: selectedExchange,
       // name: form.elements.name.value,
       name: selectedCoin,
       quantity: form.elements.quantity.value,
@@ -42,14 +58,18 @@ export const DataForm = () => {
     form.reset();
   };
 
-  const handleSelectChange = (event) => {
+  const handleSelectCoin = (event) => {
     setSelectedCoin(event.target.value);
+  };
+
+  const handleSelectExchange = (event) => {
+    setSelectedExchange(event.target.value);
   };
 
   return (
     <Form onSubmit={handleSubmit}>
       <FormBlock>
-        <Block>
+        {/* <Block>
           <Label>Exchange</Label>
           <Input
             type="text"
@@ -57,6 +77,22 @@ export const DataForm = () => {
             name="exchange"
             required
           />
+        </Block> */}
+
+       <Block>
+          <Label>Exchange</Label>
+          <Select 
+            name="exchange" 
+            value={selectedExchange} 
+            onChange={handleSelectExchange} 
+            required
+          >
+            {allExchanges.map(exchange => (
+              <option key={exchange} value={exchange}>
+                {exchange}
+              </option>
+            ))}
+          </Select>
         </Block>
 
         {/* <Block>
@@ -74,7 +110,7 @@ export const DataForm = () => {
           <Select 
             name="name" 
             value={selectedCoin} 
-            onChange={handleSelectChange} 
+            onChange={handleSelectCoin} 
             required
           >
             {allCoins.map(coin => (

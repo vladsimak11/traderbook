@@ -1,4 +1,4 @@
-import { Table, TheadTr, TbodyTr, Th, Td, TdDate, DeleteButton } from './DataList.styled';
+import { Table, TheadTr, TbodyTr, Th, Td, TdDate, DeleteButton,} from './DataList.styled';
 import { deleteCoin } from '../../redux/coins/operations';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCoins, getFilterValue } from '../../redux/coins/selectors';

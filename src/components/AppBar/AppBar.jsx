@@ -1,4 +1,5 @@
 import { Navigation } from '../Navigation/Navigation';
+import { DisplayBtc } from '../DisplayBtc/DisplayBtc';
 import { UserMenu } from '../UserMenu/UserMenu';
 import { AuthNav } from '../AuthNav/AuthNav';
 import { useAuth } from '../../hooks/useAuth';
@@ -10,6 +11,7 @@ export const AppBar = () => {
   return (
     <Header>
       <Navigation />
+      <DisplayBtc/>
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </Header>
 

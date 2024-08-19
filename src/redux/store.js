@@ -15,6 +15,7 @@ import storage from 'redux-persist/lib/storage';
 import  { coinsReducer } from './coins/coinsSlice';
 import { filterReducer } from './coins/filterSlice';
 import { authReducer } from './auth/authSlice';
+import { btcSpotReducer } from './btcSpot/btcSpotSlice';
 // import { exchangeReducer } from './exchange/exchangeSlice';
 
 const authPersistConfig = {
@@ -28,7 +29,8 @@ export const store = configureStore({
     auth: persistReducer(authPersistConfig, authReducer),
     coins: coinsReducer,
     filter: filterReducer,
-    // exchange: exchangeReducer,
+    // exchange: exchangeReduc
+    btcSpot: btcSpotReducer,
   },
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({
